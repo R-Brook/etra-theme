@@ -1,0 +1,30 @@
+<?php
+/**
+ * @file
+ * Bootstrap sub-theme.
+ *
+ * Place your custom PHP code in this file.
+ */
+
+
+
+/**
+ * Implements hook_theme_suggestions_HOOK_alter() for form templates.
+ * @param array $suggestions
+ * @param array $variables
+ */
+function etra_theme_2_theme_suggestions_block_alter(array &$suggestions, array $variables) {
+    if (isset($variables['elements']['content']['#block_content'])) {
+        array_splice($suggestions, 1, 0, 'block__bundle__' . $variables['elements']['content']['#block_content']->bundle());
+    }
+}
+
+function etra_theme_2_template_preprocess_field(&$variables, $hook) {
+    $element = $variables['element'];
+    if ($element['#name'] == 'field_background_photo') {
+        $variables['attributes']['class'][] = 'background-photo';
+    }
+}
+
+
+?>

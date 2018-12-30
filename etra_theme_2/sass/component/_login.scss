@@ -1,0 +1,18 @@
+.alert-info {
+  border: none;
+  margin-top: 13px;
+  & {
+    padding-left: 28px;
+    padding-right: 28px;
+  }
+}
+
+
+#block-userlogin {
+  li {
+    display: none;
+  }
+  .request-password-link {
+    display: none;
+  }
+}

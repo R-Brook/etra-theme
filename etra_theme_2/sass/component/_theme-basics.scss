@@ -1,0 +1,71 @@
+/* Text */
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Playfair Display', serif;
+  font-style: normal;
+  font-weight: normal;
+}
+
+h1 {
+  font-family: 'Playfair Display', serif;
+  font-weight: 900;
+  font-size: 3em;
+  text-align: center;
+  width: 100%;
+}
+
+h1.page-header {
+  margin-top: 1em;
+}
+
+.path-taxonomy {
+  h1 {
+
+
+
+  }
+}
+
+p {
+  font-family: 'Merriweather Sans', sans-serif;
+  font-size: 1.1em;
+}
+
+a {
+  color: $primary;
+}
+
+a:hover {
+  color: $primary;
+}
+
+
+/* Floats */
+
+.float-left {
+  float: left;
+}
+
+.float-right {
+  float: right;
+}
+
+/* Region widths */
+
+.full-width {
+  padding-left:0;
+  padding-right:0;
+}
+
+
+/* Edit screen */
+
+#edit-field-paragraphs-wrapper li {
+  list-style: none;
+}
+
+/* */
+
+.main-container {
+  margin-top: -7px;
+}

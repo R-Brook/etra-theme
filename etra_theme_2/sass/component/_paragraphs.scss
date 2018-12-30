@@ -1,0 +1,768 @@
+@mixin slice-button {
+  background: orange;
+  color: white;
+  padding: 0.5em 1em;
+  border: 3px solid orange;
+  border-radius: 10px;
+}
+
+// 2 Columns Full
+
+.paragraph--type--full-width-2-columns {
+
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  text-align:center;
+
+  p {
+    font-family: sans-serif;
+    color: white;
+    padding: 0.5em;
+  }
+
+  .item-one-slice-item {
+    background-color: #1088A8;
+  }
+
+  .item-two-slice-item {
+    background-color: #10A87C;
+  }
+
+
+
+  .slice-item {
+
+    width: 100%;
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    //padding: 20px;
+    color: white;
+    text-align: center;
+    flex-direction: column;
+    justify-content: flex-start;
+
+    figure {
+      margin-bottom: 0;
+    }
+
+
+    @media all and (min-width: 60.063em) {
+      flex-basis: 50%;
+    }
+
+
+
+    .field-paragraph--field-item-1-body,
+    .field-paragraph--field-item-2-body {
+      max-width: 380px;
+    }
+
+    .field-paragraph--field-item-1-cta,
+    .field-paragraph--field-item-2-cta {
+      margin-top: auto;
+      margin-bottom: 28px; // 20px standard + 0.5em (button's padding)
+      a {
+        @include slice-button;
+      }
+    }
+
+
+  }
+  .field-paragraph--field-item-1-title,
+  .field-paragraph--field-item-2-title {
+    text-align: center;
+    color: white;
+    margin-top: 20px;
+    margin-bottom: 0;
+  }
+}
+
+/*
+
+
+// Mixins
+
+
+
+@mixin darken-overlay {
+  background: rgba(0,0,0,.25);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  color: $text-color-very-light;
+  text-align: center;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+@mixin slice-padding {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+// Styling that spans multiple slices
+
+.paragraph {
+  h2, h3 {
+    color: $text-color-headings;
+    margin-bottom: 20px;
+    text-align: center;
+    text-transform: uppercase;
+    line-height: 100%;
+  }
+  h2 {
+    font-family: $slice-title;
+  }
+  h3 {
+    font-family: $slice-sub-title;
+  }
+
+}
+
+// Slice wrappers
+
+.field-node--field-slices { // Adds a bottom margin to each slice, apart from the last one on the page.
+  > div {
+    > div {
+      //margin-bottom: 20px;
+      &:last-of-type {
+        margin-bottom: 0;
+      }
+    }
+  }
+}
+
+.slice-wrapper {
+  max-width: 960px;
+  margin: auto;
+  @media all and (max-width: 60em) {
+    padding: 0 0.75em;
+  }
+}
+
+
+/*
+  *
+  * Styling for individual paragraph types
+  *
+*/
+
+
+// Headline Image
+
+/*
+$min-banner-height: 380px;
+
+.paragraph--type--headline-image {
+  background-color: #e17735;
+
+  @media all and (min-width: 45.063em) {
+    height: $min-banner-height;
+  }
+
+  .slice-wrapper {
+    max-width: 960px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+
+    @media all and (min-width: 45.063em) {
+      height: $min-banner-height;
+    }
+
+    .banner-text {
+      flex-basis: auto;
+      margin-top: auto;
+    }
+
+    > div {
+      margin-bottom: 0;
+
+      @media all and (min-width: 60.063em) {
+        margin-bottom: 20px;
+      }
+
+    }
+
+    @media all and (min-width: 60.063em) {
+      padding-right: 80px;
+    }
+
+    .field-paragraph--field-message {
+      color: $text-color-very-light;
+      font-size: 2em;
+      height: 100%;
+      margin: 40px 0;
+
+      @media all and (min-width: 60.063em) {
+        margin: 0;
+      }
+
+      p {
+        font-family: 'PT Serif', serif;
+        font-size: 1em;
+        line-height: 100%;
+        text-align: right;
+      }
+
+    }
+  }
+}
+
+
+// Image Left Text Right
+
+.paragraph--type--image-left-text-right {
+
+  @include slice-padding;
+
+  .slice-item {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    @media all and (min-width: 60.063em) {
+      padding-left: 8.5106383%;
+      padding-right: 8.5106383%;
+      justify-content: space-between;
+    }
+  }
+
+  p {
+    font-family: $body-text;
+  }
+
+  .field-paragraph--field-title {
+    color: $text-color-headings;
+    font-family: $slice-title;
+    margin-bottom: 20px;
+    text-align: center;
+    text-transform: uppercase;
+    line-height: 100%;
+  }
+  .field-paragraph--field-item-image {
+    max-width: 100%;
+
+    @media all and (min-width: 60.063em) {
+      width: 390px;
+    }
+
+    figure {
+      margin-bottom: 0;
+    }
+
+  }
+  .title-and-text {
+    display: inline-block;
+    width: 100%;
+
+    @media all and (min-width: 60.063em) {
+      width: 390px;
+    }
+
+    .field-paragraph--field-item-title {
+      margin-bottom: 0;
+
+      p {
+        color: $text-color-headings;
+        font-family: $slice-sub-title;
+        font-weight: $font-weight-bold;
+        font-size: 1.1em;
+        text-transform: uppercase;
+        text-align: center;
+      }
+    }
+
+    .field-paragraph--field-item-1-body {
+      margin-bottom: 0;
+    }
+
+  }
+}
+
+
+// Three Column
+
+.paragraph--type--three-column {
+
+  @include slice-padding;
+
+  p {
+    font-family: $body-text;
+  }
+
+  .columns-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    @media all and (min-width: 60.063em) {
+      padding-left: 80px;
+      padding-right: 80px;
+    }
+
+  }
+  .field-paragraph--field-title {
+    color: $text-color-headings;
+    font-family: $slice-title;
+    margin-bottom: 20px;
+    text-align: center;
+    text-transform: uppercase;
+    line-height: 100%;
+    width: 100%;
+    display: block;
+  }
+
+  .field-paragraph--field-standfirst {
+    @media all and (min-width: 60.063em) {
+      padding-left: 80px;
+      padding-right: 80px;
+    }
+  }
+
+  .slice-item {
+
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+
+    @media all and (min-width: 60.063em) {
+      width: 253.33px;
+      flex-basis: auto;
+
+    }
+
+    .field-paragraph--field-item-1-title,
+    .field-paragraph--field-item-2-title,
+    .field-paragraph--field-item-3-title {
+      color: $text-color-headings;
+      text-align: center;
+      text-transform: uppercase;
+      margin-bottom: 0;
+    }
+
+  }
+
+}
+
+
+
+// Carousel
+
+.paragraph--type--carousel {
+
+  padding: 20px 0;
+  background-color: $row-background-color-dark;
+
+  @media all and (min-width: 45.063em) {
+    background-color: rgba(0,0,0,0);
+    padding: 0;
+  }
+
+  p {
+    font-family: $body-text;
+    color: $row-background-color-very-lite;
+
+    @media all and (min-width: 45.063em) {
+      color: inherit;
+    }
+  }
+
+  .slice-item {
+    overflow: hidden;
+    .field-type-image__figure {
+      margin: 0;
+    }
+
+  }
+
+  .slice-wrapper {
+    max-width: 960px;
+    position: relative;
+  }
+
+  .slide-overlay {
+
+    .field-paragraph--field-title {
+
+      color: $row-background-color-very-lite;
+      text-align: center;
+
+    }
+
+    .slide-text-body {
+
+      .field-paragraph--field-cta {
+
+        margin-bottom: 0;
+        text-align: center;
+
+        a {
+          @include slice-button;
+        }
+
+      }
+
+    }
+
+    @media all and (min-width: 45.063em) {
+
+      display: block;
+      position: absolute;
+      top: 0;
+      right: 60px; //6.3829787%;
+      height: 100%;
+      width: 420px; //44.6808511%;
+
+      h2 {
+        margin-bottom: 0;
+      }
+
+      .field-paragraph--field-title {
+        background-color: $text-color-dark;
+        opacity: 0.89;
+        color: $text-color-very-light;
+        margin-bottom: 0;
+        padding: 0.35em 0;
+      }
+
+      .slide-text-body {
+        background: rgba($body-background-color, 0.89);
+        padding: 0;
+        width: 100%;
+        display: block;
+        position: absolute;
+
+        .field-paragraph--field-body {
+          padding-top: 20px;
+        }
+
+        .field-paragraph--field-cta {
+          text-align: left;
+        }
+
+        .field-paragraph--field-cta.field-formatter-link {
+          margin-bottom: 0;
+        }
+
+        > div {
+          padding: 0 20px 10px 20px;
+        }
+
+        &:after {
+          content: " ";
+          display: block;
+          height: 120px;
+          width: 100%;
+          position: absolute;
+          background-color: $body-background-color;
+          background: -webkit-linear-gradient(rgba($body-background-color,0.89), rgba($body-background-color,0)); /* For Safari 5.1 to 6.0 */
+          //background: -o-linear-gradient(rgba($body-background-color,0.89), rgba($body-background-color,0)); /* For Opera 11.1 to 12.0 */
+         // background: -moz-linear-gradient(rgba($body-background-color,0.89), rgba($body-background-color,0)); /* For Firefox 3.6 to 15 */
+          //background: linear-gradient(rgba($body-background-color,0.89), rgba($body-background-color,0)); /* Standard syntax (must be last) */
+        /*}
+      }
+    }
+  }
+/*
+  .field-paragraph--field-image {
+    img {
+      width: 100%;
+    }
+
+    @media all and (max-width: 45em) {
+      display: none;
+    }
+  }
+
+  .slick-next {
+    &:before {
+      content: url(/themes/frontend/images/misc/next-arrow.png);
+    }
+  }
+
+  .slick-prev {
+    &:before {
+      content: url(/themes/frontend/images/misc/prev-arrow.png);
+    }
+
+  }
+
+  .slick__arrow {
+
+    button {
+      background: rgba($text-color-dark, 0.89);
+      height: 70px;
+      width: 50px;
+    }
+
+    @media all and (max-width: 45em) {
+      position: absolute;
+      top: 20px;
+    }
+  }
+
+  .slick-arrow {
+    border-radius: 0;
+    box-shadow: none;
+
+    &:before {
+      color: $row-background-color-very-lite;
+
+    }
+
+  }
+}
+
+
+
+/* CTA */
+/*
+.paragraph--type--cta {
+
+  .darken-overlay {
+    @include darken-overlay;
+  }
+
+  .slice-wrapper {
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+
+    > div {
+      padding: 0 20px;
+    }
+
+    .field-paragraph--field-standfirst {
+      flex-basis: 100%;
+      font-family: $slice-title;
+      color: $text-color-very-light;
+      font-size: 2em;
+      margin: 0 0 20px 0;
+      text-align: center;
+      text-transform: uppercase;
+      line-height: 100%;
+    }
+
+    .field-paragraph--field-telephone {
+      margin-bottom: 20px;
+      flex-basis: 100%;
+      @media all and (min-width: 45.063em) {
+        margin-bottom: 0;
+        flex-basis: auto;
+      }
+      a {
+        color: $text-color-very-light;
+        &:before {
+          content: 'Tel:\0020';
+          &:hover {
+            text-decoration: none;
+          }
+        }
+      }
+    }
+
+    .field-paragraph--field-cta {
+      margin: 10px 0;
+      a {
+        @include slice-button;
+      }
+    }
+  }
+}
+
+
+/* Body Text */
+/*
+.paragraph--type--body {
+
+  @include slice-padding;
+
+  .slice-wrapper {
+    @media all and (min-width: 60.063em) {
+      padding-left: 80px;
+      padding-right: 80px;
+      justify-content: space-between;
+    }
+    .field-paragraph--field-title {
+      text-align: center;
+      text-transform: uppercase;
+      color: $text-color-headings;
+      font-family: $slice-title;
+      margin-bottom: 20px;
+      line-height: 100%;
+    }
+  }
+}
+
+
+/* Quote */
+/*
+.paragraph--type--quote {
+
+  @include slice-padding;
+
+  .slice-wrapper {
+    display: flex;
+    align-items: center;
+    @media all and (min-width: 60.063em) {
+      padding-left: 80px;
+      padding-right: 80px;
+      justify-content: space-between;
+    }
+
+    .field-paragraph--field-image {
+      display: none;
+      @media all and (min-width: 45.063em) {
+        display: block;
+        width: 140px;
+        margin-right: 20px;
+      }
+      img {
+        width: 250px;
+      }
+      figure {
+        margin-bottom: 0;
+      }
+    }
+
+    .quote-text {
+      display: flex;
+      flex-direction: column;
+      margin-right: auto;
+      width: 800px;
+
+      .field-paragraph--field-body {
+        position: relative;
+        margin-bottom: 0;
+        font-family: 'PT Serif', serif;
+        font-size: 2em;
+        p {
+          color: $text-color-dark;
+          display: flex;
+          align-items: center;
+          justify-content: flex-start;
+          padding: 0;
+          line-height: 100%;
+          @media all and (min-width: 45.063em) {
+            padding-bottom: 20px;
+          }
+          &:before {
+            content: url(/themes/frontend/images/misc/open-quotes.png);
+            align-self: flex-start;
+            margin-right: 10px;
+          }
+          &:after {
+            content: url(/themes/frontend/images/misc/close-quotes.png);
+            align-self: flex-end;
+            margin-left: 10px;
+          }
+        }
+      }
+
+      .quote-details {
+        display: flex;
+        justify-content: flex-end;
+        margin-left: auto;
+        color: $text-color-dark;
+
+        div {
+          margin-bottom: 0;
+        }
+
+        .field-paragraph--field-name {
+          .field__item {
+            &:after {
+              content: ',\00a0';
+            }
+          }
+        }
+        .field-paragraph--field-position {
+          .field__item {
+            &:after {
+              content: '\00a0';
+            }
+          }
+        }
+        .field-paragraph--field-organisation {
+          .field__item {
+            &:before {
+              content: '(';
+            }
+            &:after {
+              content: ')';
+            }
+          }
+        }
+
+      }
+    }
+  }
+}
+
+/* FAQs  */
+/*
+.paragraph--type--faqs {
+
+  @include slice-padding;
+
+  .slice-wrapper {
+    @media all and (min-width: 60.063em) {
+      padding-left: 80px;
+      padding-right: 80px;
+      justify-content: space-between;
+    }
+
+    .paragraph--type--faq {
+
+      padding-bottom: 20px;
+
+      //display: flex;
+      //flex-direction: row;
+      //justify-content: flex-start;
+
+      details {
+        //order: -1;
+        margin: 0;
+      }
+
+      h3 {
+        text-align: left;
+        text-transform: none;
+        color: $text-color-headings;
+        font-family: $slice-title;
+        margin-bottom: 20px;
+        line-height: 100%;
+      }
+      .field-paragraph--field-question {
+        //display: flex;
+        /*&:before {
+          content: url(/themes/frontend/images/misc/plus-in-circle.png);
+          //display: inline-block;
+          margin-right: 10px;
+        }*/
+   /*   }
+
+    }
+
+  }
+
+  .open-close-tab {
+
+  }
+
+}
+
+*/

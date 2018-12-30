@@ -1,0 +1,132 @@
+/**
+ * Navbar styling.
+ */
+$mobile:  "screen and (max-width: #{$screen-xs-max})";
+$tablet:  "screen and (min-width: #{$screen-sm-min})";
+$normal:  "screen and (min-width: #{$screen-md-min})";
+$wide:    "screen and (min-width: #{$screen-lg-min})";
+
+body {
+  // Fix horizontal scrolling on iOS devices.
+  // http://drupal.org/node/1870076
+  position: relative;
+
+  &.navbar-is-static-top {
+    margin-top: 0;
+  }
+  &.navbar-is-fixed-top {
+    margin-top: ($navbar-height + ($grid-gutter-width / 2));
+  }
+  &.navbar-is-fixed-bottom {
+    padding-bottom: ($navbar-height + ($grid-gutter-width / 2));
+  }
+
+  @media #{$tablet} {
+    margin-top: ($grid-gutter-width / 2);
+  }
+  @media #{$mobile} {
+    &.toolbar-vertical {
+      &.navbar-is-fixed-top,
+      &.navbar-is-fixed-bottom {
+        .toolbar-bar {
+          position: fixed;
+        }
+        header {
+          z-index: 500;
+        }
+      }
+      // Default toolbar fixed height value.
+      // @see core/modules/toolbar/css/toolbar.icons.theme.css@261
+      &.navbar-is-fixed-top header {
+        top: 39px;
+      }
+    }
+  }
+}
+.navbar.container {
+  @media #{$tablet} {
+    max-width: (($container-sm - $grid-gutter-width));
+  }
+  @media #{$normal} {
+    max-width: (($container-md - $grid-gutter-width));
+  }
+  @media #{$wide} {
+    max-width: (($container-lg - $grid-gutter-width));
+  }
+}
+.navbar.container > .container,
+.navbar.container-fluid > .container-fluid {
+  margin: 0;
+  padding: 0;
+  width: auto;
+}
+
+
+/* Main Navigation */
+
+.navbar-default {
+  background-color: $primary;
+  border: 0;
+  border-bottom: 0.6em solid $dark-primary;
+  border-radius: 0;
+  .navbar-header {
+    .icon-bar {
+      background-color: $very-light;
+    }
+  }
+}
+
+.navbar-default .navbar-brand {
+  color: $very-light;
+}
+
+.navbar-default .navbar-brand:hover {
+  color: $very-light;
+  text-decoration: underline;
+}
+
+.navbar-default .navbar-nav > li > a {
+  color: $very-light;
+}
+
+.navbar-default .navbar-nav > li > a.is-active {
+  text-decoration: none;
+  background-color: $dark-primary;
+}
+
+.navbar-default .navbar-nav > .active > a,
+.navbar-default .navbar-nav > .active > a:hover,
+.navbar-default .navbar-nav > .active > a:focus {
+  color: $very-light;
+  background-color: $dark-primary;
+  text-decoration: underline;
+}
+
+.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
+  color: $very-light;
+  background-color: transparent;
+  text-decoration: underline;
+}
+
+#block-useraccountmenu {
+  @media (max-width: 767px) {
+    ul {
+      margin: 0;
+      li {
+        a {
+          padding-left: 0;
+        }
+      }
+    }
+  }
+  ul {
+    margin: 0;
+    li {
+      a {
+        padding-left: 15px;
+      }
+    }
+  }
+}
+
+

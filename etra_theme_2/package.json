@@ -1,0 +1,16 @@
+{
+  "name": "etra_theme_2",
+  "version": "1.0.0",
+  "author": "Rachel Brook",
+  "homepage": "http://homepage.com",
+  "engines": {
+    "node": ">= 0.8.0"
+  },
+  "devDependencies": {
+    "grunt": "^1.0.1",
+    "grunt-contrib-compass": "latest",
+    "grunt-contrib-jshint": "^1.1.0",
+    "grunt-contrib-sass": "latest",
+    "grunt-contrib-watch": "latest"
+  }
+}

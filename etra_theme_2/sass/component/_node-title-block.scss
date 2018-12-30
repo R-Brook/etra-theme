@@ -1,0 +1,36 @@
+/* Custom Block with Node Title */
+
+.title-block {
+  padding: 3em 2em 2em 2em;
+  text-align: left;
+}
+
+.title-block h1 {
+  margin-top: 0;
+  color: $very-light;
+  text-align: left;
+}
+
+.banner-text {
+  background-color: rgba(0, 0, 0, .6);
+  padding: 1em 2em 1em 1em;
+}
+
+.field--name-field-introduction {
+  color: $very-light;
+}
+
+/* Newsletter archive */
+.block-block-content87d4632d-d316-4243-ad82-9b33ce30a0c2 {
+  background: url('/sites/enfield-town-ra.dd/files/2017-01/DSC_4336-web.jpg');
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  padding: 6em 0 6em 0;
+}
+/* Current issues */
+.block-block-contentcea73bb3-5544-4f69-833b-ac1c5fe8ca03 {
+  background: url('/sites/enfield-town-ra.dd/files/2017-01/IMG_1372-web.jpg');
+  background-repeat: no-repeat;
+  background-position: 60% 60%;
+  padding: 6em 0 6em 0;
+}

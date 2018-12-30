@@ -1,0 +1,31 @@
+// Buttons
+
+.read-btn {
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border: 1px solid $black;
+  border-radius: 5px;
+  display: inline-block;
+  margin: 1em;
+  padding: .5em 1em;
+  a {
+    font-size: 1.1em;
+    &:hover {
+      text-decoration: none;
+    }
+  }
+  .fa-download {
+    margin-left: 1em;
+  }
+}
+
+.btn-info {
+  background-color: $very-dark;
+  border-color: $very-dark;
+  color: $very-light;
+  &:hover {
+    background-color: $cta;
+    border-color: $cta;
+    color: $very-light;
+  }
+}
