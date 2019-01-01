@@ -1,0 +1,25 @@
+@mixin slice-button {
+  background: orange;
+  color: white;
+  padding: 0.5em 1em;
+  border: 3px solid orange;
+  border-radius: 10px;
+}
+
+@mixin darken-overlay {
+  background: rgba(0,0,0,.25);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  color: $text-color-very-light;
+  text-align: center;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+@mixin slice-padding {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}

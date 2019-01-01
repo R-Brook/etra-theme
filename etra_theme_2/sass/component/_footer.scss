@@ -2,30 +2,34 @@
   padding: 0 1em;
 }
 
-.footer {
-  background-color: $very-dark;
-}
 
 footer {
+  background-color: $very-dark;
+
   a {
     color: $very-light;
+
     &:hover {
       color: $primary;
     }
+
   }
+
   p {
     color: $very-light;
     font-size: .75em;
-  }  
+  }
 }
 
 .nav {
-  > li {
+  & > li {
+
     a {
       &:hover {
         background-color: $transparent;
         text-decoration: none;
       }
+
       &:focus {
         background-color: $transparent;
         text-decoration: none;

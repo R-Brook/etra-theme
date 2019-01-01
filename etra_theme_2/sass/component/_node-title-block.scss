@@ -3,12 +3,11 @@
 .title-block {
   padding: 3em 2em 2em 2em;
   text-align: left;
-}
-
-.title-block h1 {
-  margin-top: 0;
-  color: $very-light;
-  text-align: left;
+  h1 {
+    margin-top: 0;
+    color: $very-light;
+    text-align: left;
+  }
 }
 
 .banner-text {

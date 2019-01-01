@@ -1,10 +1,3 @@
-@mixin slice-button {
-  background: orange;
-  color: white;
-  padding: 0.5em 1em;
-  border: 3px solid orange;
-  border-radius: 10px;
-}
 
 // 2 Columns Full
 
@@ -14,12 +7,12 @@
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-between;
-  text-align:center;
+  text-align: center;
 
   p {
+    color: #ffffff;
     font-family: sans-serif;
-    color: white;
-    padding: 0.5em;
+    padding: .5em;
   }
 
   .item-one-slice-item {
@@ -30,31 +23,23 @@
     background-color: #10A87C;
   }
 
-
-
   .slice-item {
-
-    width: 100%;
-    position: relative;
-
-    display: flex;
     align-items: center;
-    //padding: 20px;
-    color: white;
-    text-align: center;
+    color: #ffffff;
+    display: flex;
     flex-direction: column;
     justify-content: flex-start;
+    position: relative;
+    text-align: center;
+    width: 100%;
 
-    figure {
+    /*figure {
       margin-bottom: 0;
-    }
-
+    }*/
 
     @media all and (min-width: 60.063em) {
       flex-basis: 50%;
     }
-
-
 
     .field-paragraph--field-item-1-body,
     .field-paragraph--field-item-2-body {
@@ -63,11 +48,13 @@
 
     .field-paragraph--field-item-1-cta,
     .field-paragraph--field-item-2-cta {
-      margin-top: auto;
       margin-bottom: 28px; // 20px standard + 0.5em (button's padding)
+      margin-top: auto;
+
       a {
         @include slice-button;
       }
+
     }
 
 
@@ -81,30 +68,80 @@
   }
 }
 
+
+
+
+
+// Three Column
+
+.paragraph--type--three-column {
+
+  @include slice-padding;
+
+  p {
+    font-family: $body-text;
+  }
+
+  .columns-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    @media all and (min-width: 60.063em) {
+      padding-left: 80px;
+      padding-right: 80px;
+    }
+
+  }
+  .field-paragraph--field-title {
+    color: $body-text;
+    font-family: 'Playfair Display', serif;
+    margin-bottom: 20px;
+    text-align: center;
+    text-transform: uppercase;
+    line-height: 100%;
+    width: 100%;
+    display: block;
+  }
+
+  .field-paragraph--field-standfirst {
+    @media all and (min-width: 60.063em) {
+      padding-left: 80px;
+      padding-right: 80px;
+    }
+  }
+
+  .slice-item {
+
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+
+    @media all and (min-width: 60.063em) {
+      width: 253.33px;
+      flex-basis: auto;
+
+    }
+
+    .field-paragraph--field-item-1-title,
+    .field-paragraph--field-item-2-title,
+    .field-paragraph--field-item-3-title {
+      color: $body-text;
+      text-align: center;
+      text-transform: uppercase;
+      margin-bottom: 0;
+    }
+
+  }
+
+}
+
+
 /*
 
-
-// Mixins
-
-
-
-@mixin darken-overlay {
-  background: rgba(0,0,0,.25);
-  width: 100%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  padding: 20px;
-  color: $text-color-very-light;
-  text-align: center;
-  flex-direction: column;
-  justify-content: flex-start;
-}
-
-@mixin slice-padding {
-  margin-top: 20px;
-  margin-bottom: 20px;
-}
 
 // Styling that spans multiple slices
 
@@ -286,75 +323,6 @@ $min-banner-height: 380px;
 
   }
 }
-
-
-// Three Column
-
-.paragraph--type--three-column {
-
-  @include slice-padding;
-
-  p {
-    font-family: $body-text;
-  }
-
-  .columns-container {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-between;
-
-    @media all and (min-width: 60.063em) {
-      padding-left: 80px;
-      padding-right: 80px;
-    }
-
-  }
-  .field-paragraph--field-title {
-    color: $text-color-headings;
-    font-family: $slice-title;
-    margin-bottom: 20px;
-    text-align: center;
-    text-transform: uppercase;
-    line-height: 100%;
-    width: 100%;
-    display: block;
-  }
-
-  .field-paragraph--field-standfirst {
-    @media all and (min-width: 60.063em) {
-      padding-left: 80px;
-      padding-right: 80px;
-    }
-  }
-
-  .slice-item {
-
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
-
-    @media all and (min-width: 60.063em) {
-      width: 253.33px;
-      flex-basis: auto;
-
-    }
-
-    .field-paragraph--field-item-1-title,
-    .field-paragraph--field-item-2-title,
-    .field-paragraph--field-item-3-title {
-      color: $text-color-headings;
-      text-align: center;
-      text-transform: uppercase;
-      margin-bottom: 0;
-    }
-
-  }
-
-}
-
 
 
 // Carousel
